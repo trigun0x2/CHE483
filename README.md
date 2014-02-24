@@ -1,6 +1,6 @@
 CHE483
 ======
-The awesome fourth year projec repo for the Breathalyzer group.
+The awesome fourth year project repo for the Breathalyzer group.
 
 ## Members
 
