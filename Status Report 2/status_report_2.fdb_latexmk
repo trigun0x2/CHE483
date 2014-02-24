@@ -1,10 +1,12 @@
 # Fdb version 3
-["pdflatex"] 1393160573 "status_report_2.tex" "status_report_2.pdf" "status_report_2" 1393160574
+["pdflatex"] 1393254622 "status_report_2.tex" "status_report_2.pdf" "status_report_2" 1393254622
   "/usr/local/texlive/2013/texmf-dist/tex/latex/base/article.cls" 1254151887 20571 b8bd218bf2e18b4f5817ee643cd9c515 ""
   "/usr/local/texlive/2013/texmf-dist/tex/latex/base/omscmr.fd" 1254151887 2109 c400bd6c901edc4a09e4d53fcffd3b3c ""
   "/usr/local/texlive/2013/texmf-dist/tex/latex/base/size10.clo" 1254151887 9042 248dfba326a1b8733d6bb8e0a3ac1e49 ""
-  "status_report_2.aux" 1393160574 1180 41bda898e861622508a662eebbd63c4a ""
-  "status_report_2.tex" 1393160563 13149 29c9ca33a58f716329bcbe7325e22de5 ""
+  "/usr/local/texlive/2013/texmf-dist/tex/latex/tools/array.sty" 1254151720 13146 3e38b06d6e7ca62ce1bdb63b0d6148a5 ""
+  "/usr/local/texlive/2013/texmf-dist/tex/latex/tools/tabularx.sty" 1254151720 6076 90ca6002d5df607cc27699a4af5ff84e ""
+  "status_report_2.aux" 1393254622 2542 f7f6a2dce742ef813aaa1def811cbc97 ""
+  "status_report_2.tex" 1393254621 16236 8a3b860fec7c6af55ca7562273779919 ""
   (generated)
   "status_report_2.aux"
   "status_report_2.pdf"

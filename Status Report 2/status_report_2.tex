@@ -1,5 +1,6 @@
 % CHE473 Status Report #1
 \documentclass{article}
+	\usepackage{tabularx}
 	\addtolength{\oddsidemargin}{-.875in}
 	\addtolength{\evensidemargin}{-.875in}
 	\addtolength{\textwidth}{1.75in}
@@ -104,17 +105,19 @@ Spray solutions were created at approximately 60 percent excess catalyst and Naf
 \begin{table}[ht]
 \caption{Theoretical and Actual Catalyst Loading in GDL Preparation}
 \centering
-\begin{tabular}{c c c c c c}
-\hline\hline
-Theoretical Loading & GDL Initial Mass & GDL Final Mass  & Spray Efficiency/ & Actual Loading & Overall Recovery \\
-(mg/cm\textsuperscript{2}) & (g) & (g) & Recovery Ratio & (mg/cm\textsuperscript{2}) & Ratio\\
+\noindent\begin{tabularx}{\linewidth}{|X|X|X|X|X|X}
+\hline
+Theoretical Loading (mg/cm\textsuperscript{2}) & GDL Initial Mass (g) & GDL Final Mass (g) & Spray Efficiency/Recovery Ratio & Actual Loading (mg/cm\textsuperscript{2}) & Overall Recovery Ratio \\
 \hline
 0.25 & 0.09291 & 0.1004 & 0.475 & 0.198 & 0.79\\
+\hline
 0.5 & 0.09182 & 0.10377 & 0.379 & 0.316 & 0.632\\
+\hline
 0.75 & 0.08539 & 0.10318 & 0.376 & 0.470 & 0.627\\
+\hline
 1.00 & 0.08680 & 0.12543 & 0.613 & 1.021 & 1.021\\
 \hline
-\end{tabular}
+\end{tabularx}
 \label{table:gdlload}
 \end{table}\\
 Spray efficiency/recovery ratio is the ratio of total loading achieved to total possible loading achievable with the created spray solution, while overall recovery ratio is the ratio of total loading achieved to the intended theoretical loading. Spray efficiency/recovery ratio is a better used as an indicator of equipment and procedural efficiency, whereas the overall recovery ratio is the primary criteria, as it determines the usability of the GDL. Typically, acceptable minimum overall recovery ratios range from 0.5-0.6 due to losses during spraying and particle retainment in the spray gun. This is in order to ensure sufficient catalyst loading even distribution of the catalyst on the GDL. As such, all four GDLs created thus far have been deemed valid for fuel cell creation.
