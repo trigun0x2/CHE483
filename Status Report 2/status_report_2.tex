@@ -9,45 +9,40 @@
 	\linespread{2}
 
 \begin{document}
-	\title{CHE483 Status Report 2}
+	\title{CHE483 Status Report 2 \\ Gas Diffusion Layer Loading for Breathalyser Performance}
 	\author{Group 40: \\James Zhang \\ Jeffrey Tong \\ Vince Cheung \\ Yang Guo }
 	\date{Last Updated: \today}
 	\maketitle
 	\cleardoublepage
-	\section{Group Members}
-		\begin{itemize}
-			\item	James Zhang: 20334659
-			\item	Jeffrey Tong: 20336475
-			\item	Vince Cheung: 20336382
-			\item	Yang Guo: 20329358
-			\item Supervising Professor: Zhongwei Chen (zhwchen@uwaterloo.ca)
-			\item Main Supervisor (No longer in Waterloo): Siamak Farhad (sfarhad@uwaterloo.ca)
-			\item Laboratory Supervisor: Gaopeng Jiang (g2jiang@uwaterloo.ca)
-		\end{itemize}
+		\tableofcontents
+\pagebreak
+	\section{Current Progress}
+	At this time, all laboratory equipment required to create and test the PEMFC breathalysers have been purchased, set up, and tested. Calculations pertaining to the catalyst loading have been completed. All Nafion membranes were pre-treated, catalyst ink at various loadings have been prepared and sprayed. The spraying efficiencies/recovery ratios have been calculated and deemed reasonable. After thoroughly drying all prepared GDLs, surfaces were deemed suitably smooth and even for use in sensor assemblies. Preparations are under way to perform hot pressing and create the final sensors for further testing. This is expected to be completed by the end of this week so that sensor testing can be completed with the breathalyser simulators by the end of next week. Due to time constraint, changes to the platinum loading of anode and cathode will be made simultaneously, to reduce the need to produce more catalyst ink containing varying amounts of platinum and the total number of trials to be performed. Although if data analysis from breathalyser testing show the need for additional testing, a limited number of additional sensors may be produced. \\
+	Testing apparatus previously used by other members of Professor Chen's team has been vacated and will be available for use for the foreseeable future. Testing is expected to begin with initial blank runs to establish normal operation and analysis of results will proceed alongside data acquisition so that any additional as well as repeat trials can be performed as necessary. Overall progress is on track to finish the experimental portion of the project by the first week of March.\\
+	Preliminary ethanol/water thermodynamics modelling has been completed using Aspen Plus, but further model refinements as well as repeat calculations using other models may be completed in MATLAB within the next week, to verify breathalyser testing results.\\
+	Experimental procedures have been compiled and updated. Preliminary layout of the poster is ongoing and the overall layout is will be finalized by the end of this week. Images and basic content including experimental design/set-up, background some theoretical information have been compiled for the poster and will be edited and inserted by next week. Some experimental results are available but final results will be added as soon as they are available.
+\pagebreak
 	\section{Executive Summary}
+	The typical fuel cell used in a breathalyser is a Polymer Electrolyte Membrane Fuel Cell, or PEMFC. In this fuel cell, hydrogen gas is split into hydrogen ions, the chemical potential of which is used to generate electricity. This current can then be used to calculate the concentration of ethanol in the breath sample. In a breathalyser, the hydrogen comes from the degradation of ethanol to acetaldehyde and hydrogen ions, which is done over a catalyst known as platinum black; platinum particles finely dusted with carbon atoms. Creation and application of this catalyst contribute a major portion of both time and cost of breathalyser production.
+Not including the actual processing and application costs, the price of the high-purity platinum used in the sensors is already \$500 USD per gram. Furthermore, the application of said platinum-black catalyst is a lengthy process, due to the even coating requirements for accurate sensor performance.  As such, any opportunities to reduce the amount of catalyst required and/or reduce the application time will be highly important in refining the production process. This project aims to do the former, and as such reduce the application time required by reducing the total amount of catalyst applied.\\
+	In fuel cell ethanol sensors, the platinum-black catalyst is applied to the Gas Diffusion Layer, or GDL, which is on both sides of the fuel cell membrane. The amount of catalyst present is expressed as “catalyst loading,” with units of mg/cm\textsuperscript{2}. The goal of this project is to optimize this catalyst loading. Key performance parameters that will be monitored include: ambient temperature, ambient humidity, breath input, input BAC, sensor accuracy, sensor start-up time, and required cool-down between tests. The initial experiment performed is a 22 statistical experiment in catalyst loading on both the sensor anode and cathode, on which linear regression is performed to determine further experimental direction. This is to expedite the experimental process given the length of time needed to fabricate sensors. Accuracy will mostly be tested at 100 BAC, until a higher level of detail is required. \\
+	The primary deliverable of this project is the reduction in catalyst usage in breathalyser sensors, and additional accuracy of the sensors themselves. Further benefits can be expected in the reduction of catalyst creation and application time. Health and safety concerns in this project include dangers of working with very fine platinum-black catalyst nano-particulate, and other routine lab safety concerns. The environmental impact of this project is mostly expected to come from the reduction in use of platinum catalyst, and the reduction of process time required in catalyst application.
+\pagebreak
+	\section{Introduction}
+	Presently, ethanol, found in alcoholic beverages, is the most-sold legally-obtainable recreational drug. Its consumption leads to a large variety of effects typically seen in depressants, such as disorientation, loss of motor skills, unconsciousness and death at higher dosages. A large number of alcohol-related incidents and injuries involve the operation of a motor vehicle after consumption, despite there being laws against doing so. As such, strict monitoring practices are required for the consumption of alcohol and usage of vehicles. The most common of these practices is the road-side examination. While various methods have been employed in the past, such as behavioural tests and questioning on the part of police officers, these have proven to be ineffective at actually determining a person’s level of intoxication, and are not considered admissible as legal evidence. \\
+	One solution to this is the portable breathalyser. A breathalyser is a device that measures the concentration of alcohol in a person’s blood via a breath sample and various chemical methods. This bypasses concerns such as human error and the rapid denaturing of alcohol in a person’s blood, which interfere with other methods such as officers’ personal judgement and in-station blood testing. Furthermore, with high accuracy methods, breathalyser readings can be admitted as evidence in-court, simplifying rulings on inebriated driving. Current breathalyser technologies are divided into three categories: Firstly, semi-conductor breathalysers, which use the change of voltage across a semi-conductor based on ethanol concentration in the air to detect the concentration of alcohol in a person’s breath. Secondly, infrared breathalysers, which detect the quantity of a wavelength of light that a sample of breath absorbs in order to determine the amount of alcohol present. Finally, fuel cell breathalysers detect alcohol based on the current generated from the degradation of ethanol to acetaldehyde and a hydrogen ion which moves through an electrolytic membrane. Semi-conductor and infrared breathalysers each have issues with accuracy and portability, respectively, which leaves fuel cell breathalysers as the prime candidate as an accurate, portable breathalyser.\\
+	This project will focus on polymer electrolyte fuel cells (PEMFC). PEMFC performance is greatly influenced by the platinum catalyst used in the oxidization of hydrogen gas. Platinum is the most expensive part of the PEMFC, therefore reducing the amount of catalyst needed in a breathalyser will lower the cost of production greatly.
 	\section{Needs Analysis}
+		\subsection{Design Problem}
+	Breathalysers are hand-held, portable devices that are used to measure a person's blood alcohol content from a breath sample. Of the present technologies available, the most promising is that of fuel cell sensors, which use an electrochemical reaction of alcohol on platinum catalyst to generate a current, which can then be measured to determine the person's level of intoxication. One of the issues facing this path is that of catalyst loading in the gas diffusion layer of the fuel cell. The catalyst used, platinum black, is expensive even in small quantities, and the optimum application of the catalyst for this usage of fuel cell technology is still unclear. As such, the current loading of catalyst in fuel cell alcohol sensors is an area that is largely unstudied.\\
+	The overall goal for the project is to decrease the loading of platinum within the catalyst coating the gas diffusion layer while maintaining or improving breathalyser fuel cell sensor accuracy. Increasing the life time of the breathalyser as well as reducing the time required for warm up and cool down between tests are secondary goals.
+		\subsection{Constraints}
+			\subsubsection{Weight and Size}
+			\subsubsection{Cost}
 	\section{Literature Review}
 	\section{Project Description}
-		\textbf{Project Title:} Gas Diffusion Layer Loading for Breathalyser Performance \\ \\
 		\textbf{Project Description:}
-		Typical breathalysers currently use technologies such as semi-conductors, infrared and polymer electrolyte fuel cells. This project will focus on polymer electrolyte fuel cells (PEMFC). PEMFC performance is greatly influenced by the platinum catalyst used in the oxidization of hydrogen gas. Platinum is the most expensive part of the PEMFC, therefore reducing the amount of catalyst needed in a breathalyser will lower the cost of production greatly.\\ \\
 		The primary deliverable of this project is a design for a PEMFC to be used in commercial breathalysers which reduces the amount of platinum used while maintaining or increasing their accuracy. Further benefits can be expected in the reduction of catalyst creation and application time. This will be accomplished by creating PEMFCs with varying amounts of platinum catalyst and testing them in a simulated breathalyser set-up to determine accuracy. Health and safety concerns in this project include inhalation risks associated with working with platinum-black catalyst particulate, and other lab safety. The environmental impact of this project is mostly expected to come from the reduction in use of platinum catalyst, and the reduction of processing time required in catalyst application.
-	\section{Design Problem}
-		Breathalysers are hand-held, portable devices that are used to measure a person's blood alcohol content from a breath sample. Of the present technologies available, the most promising is that of fuel cell sensors, which use an electrochemical reaction of alcohol on platinum catalyst to generate a current, which can then be measured to determine the person's level of intoxication. One of the issues facing this path is that of catalyst loading in the gas diffusion layer of the fuel cell. The catalyst used, platinum black, is expensive even in small quantities, and the optimum application of the catalyst for this usage of fuel cell technology is still unclear. As such, the current loading of catalyst in fuel cell alcohol sensors is an area that is largely unstudied. The goal of this project is to expand that area of knowledge, and to optimize the loading of catalyst within the fuel cell gas diffusion layer.
-	\section{Current Progress}
-		At this time, all laboratory equipment required to create and test the PEMFC breathalysers have been purchased, set up, and tested. Calculations pertaining to the catalyst loading have been completed. One membrane has been prepared, but deemed unsuitable for testing due to uneven coating.
-		At the beginning of the current term the previous project supervisor, Siamak Farhad, left the University of Waterloo. Previously he was responsible for purchase of equipment, laboratory set-up as well as liaison with Professor Zhongwei Chen and other members of his team. We have therefore contacted Gaopeng Jiang, who had previously been involved in laboratory manufacturing and testing. After reviewing progress made on the project over the past 8 months as well as possible problems brought forth by this setback, some of the project dates have been changed to better reflect current and future plans. This is shown in the attached updated Gantt chart. Literature review is an ongoing process and information gathered is expected to provide insight in analyzing data from the breathalyser tests.
-		Currently part of the testing apparatus previously purchased and set-up is being used by other members of Professor Chen's team on another, unrelated breathalyser project. This is expected to continue until the end of January.
-	\section{Future Plans and Milestones}
-		\subsection{PEMFC Catalyst Preparation}
-			Due to the length of the time (approximately 6-8 hours) required to prepare various pieces of the fuel cell membrane including the Nafion membrane, platinum black solution, etc., it is important to begin this process and create as many usable gas diffusion layers and full fuel cell sensors as possible before the testing apparatus is ready for use in February. As such laboratory work has begun and will continue several times a week over the next few weeks.
-			Due to problems with previous hot press machines, there is a limited period of time during which the last step of membrane preparation can be performed, however if several samples of platinum black-coated dry GDL and Nafion membrane are prepared, the membrane layers can be assembled in bulk, reducing the amount of time required. As such, the primary task in terms of time will be the actual spraying of the gas diffusion layers. This is due to the availability of the spray gun, along with the slow spraying speed required to ensure an even layer of catalyst on the gas diffusion layer.
-		\subsection{Breathalyser Testing}
-			Testing of the prepared membrane layers will begin once all the samples containing various amounts of platinum black are ready. The membrane layers will be tested in the breathalyser simulators at various breath alcohol levels, temperatures and air flow rates as outlined in the experiment report. Due to overlapping equipment with other groups in the lab for breathalyser testing as mentioned above, major testing likely will not occur until the end of January.
-			Experimental work is expected to conclude by the end of February, although if repeat tests are deemed necessary this may extend the experimental period by a week. Testing of standard membranes will also be conducted to have a reference point for our research.
-
-		\subsection{Literature Review, Final Report and Poster}
-			Introduction, experimental set up and theoretical background portions of the final report and poster are being compiled and edited at the moment, with experimental results, conclusions and recommendations to follow as soon as they are available. Literature review is ongoing and expected to continue until the end of experimental work. In particular, testing will be coordinated with the other breathalyser groups in the lab, in order to ensure optimal usage of data and testing.
 	\section{Methods}
 		\subsection{Sensor Fabrication}
 		\subsubsection{Nafion Pre-treatment}
@@ -97,15 +92,17 @@
 \pagebreak
 \section{Health, Safety and Environment}
 \section{Economic Analysis}
+\section{Life Cycle Analysis}
 \pagebreak
 \section{Results and Discussion}
 	\subsection{GDL Preparation}
 	The designed catalyst loading and GDL spraying results were as below:\\
 Spray solutions were created at approximately 60 percent excess catalyst and Nafion loading, in order to compensate for losses during the spraying process. This is why the final loading value and overall recovery ratio for the 1 mg/cm\textsuperscript{2} are greater than 1 and 100 percent respectively.
+
 \begin{table}[ht]
 \caption{Theoretical and Actual Catalyst Loading in GDL Preparation}
 \centering
-\noindent\begin{tabularx}{\linewidth}{|X|X|X|X|X|X}
+\noindent\begin{tabularx}{\linewidth}{X|X|X|X|X|X}
 \hline
 Theoretical Loading (mg/cm\textsuperscript{2}) & GDL Initial Mass (g) & GDL Final Mass (g) & Spray Efficiency/Recovery Ratio & Actual Loading (mg/cm\textsuperscript{2}) & Overall Recovery Ratio \\
 \hline
@@ -119,18 +116,15 @@ Theoretical Loading (mg/cm\textsuperscript{2}) & GDL Initial Mass (g) & GDL Fina
 \hline
 \end{tabularx}
 \label{table:gdlload}
-\end{table}\\
+\end{table}
 Spray efficiency/recovery ratio is the ratio of total loading achieved to total possible loading achievable with the created spray solution, while overall recovery ratio is the ratio of total loading achieved to the intended theoretical loading. Spray efficiency/recovery ratio is a better used as an indicator of equipment and procedural efficiency, whereas the overall recovery ratio is the primary criteria, as it determines the usability of the GDL. Typically, acceptable minimum overall recovery ratios range from 0.5-0.6 due to losses during spraying and particle retainment in the spray gun. This is in order to ensure sufficient catalyst loading even distribution of the catalyst on the GDL. As such, all four GDLs created thus far have been deemed valid for fuel cell creation.
   	\subsection{Expected Results}
     	\subsubsection{Catalyst Loading}
       After each GDL has been created at their specified catalysts loadings, they are then combined with the electrolytic membrane via hot press to create the fuel cell sensors. These sensors are then tested via industry-standard procedures in order to create current-time curves for analysis. Major points that will be investigated are the peak time, and the recovery time. The curve peak is the highest current output from a sample, and is used to calculate the BAC of the sample. As such, the peak time is directly correlated to the waiting time between the input of a sample to the breathalyser and the earliest possible time to calculate the BAC. Recovery time refers to the minimum amount of time between the end of a sample and the start of a new sample that is required in order to maintain reading accuracy. This time is presently a major point of contention in regulation and the use of breathalysers for roadside BAC checks, due to the desire for multiple readings to ensure accuracy for use as evidence in court.\\
       For peak time, it is expected that peak time will decrease as catalyst loading increases, and vice-versa. This is since the reaction is initially limited by mass transfer between the flow boundary and the catalyst surface for reaction. As such, by increasing or decreasing the quantity of catalyst, and therefore the catalyst surface area, available, it will be possible to shorten or lengthen the peak time respectively. Since the curve peak and peak time are integral parts of the calculation of the BAC, it will be necessary to balance the catalyst loading accordingly in order to maintain both accuracy and testing time.\\
       Overall, changing the catalyst loading of the GDL should not have a large influence on the recovery time of the breathalyser. This is since the limiting factor influencing recovery time is the mass transfer of alcohol and secondary reaction products to and away from the GDL. As such, the quantity of catalyst sites available for reaction should not have an influence on breathalyser recovery time.
-      \subsection{Humidity and Temperature}
-      JAMES ZHANG
     \section{Conclusions}
 	\section{Recommendations}
 	\section{Bibliography}
 	\section{Appendix A: Sample Calculations}
-	\subsection{Mass of Platinum Carbon}
 \end{document}
